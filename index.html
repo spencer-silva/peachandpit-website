@@ -1,0 +1,739 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Peach and Pit</title>
+  <meta name="description" content="Peach and Pit: Your daily reflection app. Track best & worst moments, share photos, connect with friends." />
+  <meta property="og:title" content="The Peach and Pit Project" />
+  <meta property="og:description" content="Capture your best and worst moments daily with friends." />
+  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@peach_and_pit" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --peach: #ffb99e;
+      --peach-light: #fff4f0;
+      --peach-mid: #ffd4c2;
+      --peach-dark: #e8875f;
+      --pit: #3d2314;
+      --pit-mid: #7a4a2e;
+      --white: #ffffff;
+      --gray: #f7f3f0;
+      --text: #2d1a0e;
+      --text-light: #7a6358;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      color: var(--text);
+      background: var(--white);
+      overflow-x: hidden;
+    }
+
+    /* NAV */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1rem 2rem;
+      background: rgba(255,255,255,0.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(255,185,158,0.2);
+    }
+
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      text-decoration: none;
+    }
+
+    .nav-logo img {
+      width: 36px;
+      height: 36px;
+      border-radius: 8px;
+    }
+
+    .nav-logo span {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--pit);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: 500;
+      color: var(--pit-mid);
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover { color: var(--peach-dark); }
+
+    /* PROMO BANNER */
+    .promo-banner {
+      background: var(--pit);
+      color: var(--peach-mid);
+      text-align: center;
+      padding: 0.55rem 1rem;
+      font-size: 0.85rem;
+      font-weight: 500;
+      letter-spacing: 0.03em;
+      margin-top: 65px;
+    }
+
+    .promo-banner strong { color: var(--peach); }
+
+    /* HERO */
+    .hero {
+      min-height: 90vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 5rem 2rem 4rem;
+      background: linear-gradient(160deg, var(--peach-light) 0%, var(--white) 60%);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      width: 600px;
+      height: 600px;
+      border-radius: 50%;
+      background: radial-gradient(circle, var(--peach-mid) 0%, transparent 70%);
+      top: -200px;
+      right: -150px;
+      opacity: 0.4;
+      pointer-events: none;
+    }
+
+    .hero-eyebrow {
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--peach-dark);
+      margin-bottom: 1.2rem;
+    }
+
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.8rem, 7vw, 5rem);
+      font-weight: 700;
+      line-height: 1.1;
+      color: var(--pit);
+      max-width: 700px;
+      margin-bottom: 1.4rem;
+    }
+
+    .hero h1 em {
+      font-style: italic;
+      color: var(--peach-dark);
+    }
+
+    .hero p {
+      font-size: 1.15rem;
+      color: var(--text-light);
+      max-width: 460px;
+      line-height: 1.7;
+      margin-bottom: 2.5rem;
+    }
+
+    .store-buttons {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .store-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      padding: 0.85rem 1.6rem;
+      border-radius: 12px;
+      text-decoration: none;
+      font-size: 0.95rem;
+      font-weight: 600;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .store-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(61,35,20,0.15);
+    }
+
+    .store-btn.apple {
+      background: var(--pit);
+      color: var(--white);
+    }
+
+    .store-btn.google {
+      background: var(--white);
+      color: var(--pit);
+      border: 2px solid var(--peach);
+    }
+
+    .store-btn svg { width: 20px; height: 20px; flex-shrink: 0; }
+
+    /* SECTION BASE */
+    section { padding: 5rem 2rem; }
+
+    .section-eyebrow {
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--peach-dark);
+      margin-bottom: 0.8rem;
+    }
+
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.8rem, 4vw, 2.8rem);
+      font-weight: 700;
+      color: var(--pit);
+      margin-bottom: 1rem;
+      line-height: 1.2;
+    }
+
+    /* HOW IT WORKS */
+    .how {
+      background: var(--gray);
+    }
+
+    .how-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+    }
+
+    .how-image {
+      position: relative;
+    }
+
+    .how-image img {
+      width: 100%;
+      max-width: 320px;
+      border-radius: 24px;
+      box-shadow: 0 20px 60px rgba(61,35,20,0.15);
+      display: block;
+      margin: 0 auto;
+    }
+
+    .how-content p {
+      color: var(--text-light);
+      font-size: 1.05rem;
+      line-height: 1.8;
+      margin-bottom: 1.5rem;
+    }
+
+    .how-steps {
+      display: flex;
+      flex-direction: column;
+      gap: 1.2rem;
+    }
+
+    .how-step {
+      display: flex;
+      gap: 1rem;
+      align-items: flex-start;
+    }
+
+    .step-num {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: var(--peach);
+      color: var(--pit);
+      font-weight: 700;
+      font-size: 0.9rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .step-text strong {
+      display: block;
+      font-weight: 600;
+      color: var(--pit);
+      margin-bottom: 0.2rem;
+    }
+
+    .step-text span {
+      font-size: 0.9rem;
+      color: var(--text-light);
+      line-height: 1.5;
+    }
+
+    /* FOLLOW FRIENDS */
+    .friends {
+      background: var(--white);
+    }
+
+    .friends-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+    }
+
+    .friends-content p {
+      color: var(--text-light);
+      font-size: 1.05rem;
+      line-height: 1.8;
+    }
+
+    .friends-visual {
+      background: linear-gradient(135deg, var(--peach-light), var(--peach-mid));
+      border-radius: 24px;
+      height: 320px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 4rem;
+    }
+
+    /* REVIEWS */
+    .reviews {
+      background: var(--pit);
+      color: var(--white);
+    }
+
+    .reviews-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .reviews .section-eyebrow { color: var(--peach); }
+    .reviews .section-title { color: var(--white); text-align: center; margin-bottom: 3rem; }
+
+    .reviews-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .review-card {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,185,158,0.2);
+      border-radius: 16px;
+      padding: 1.8rem;
+      transition: transform 0.2s;
+    }
+
+    .review-card:hover { transform: translateY(-4px); }
+
+    .review-stars {
+      color: var(--peach);
+      font-size: 1rem;
+      margin-bottom: 0.8rem;
+      letter-spacing: 2px;
+    }
+
+    .review-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--peach-mid);
+      margin-bottom: 0.6rem;
+    }
+
+    .review-text {
+      font-size: 0.9rem;
+      line-height: 1.7;
+      color: rgba(255,255,255,0.75);
+      margin-bottom: 1rem;
+    }
+
+    .review-author {
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--peach);
+      letter-spacing: 0.05em;
+    }
+
+    /* DOWNLOAD CTA */
+    .download {
+      background: linear-gradient(135deg, var(--peach-light) 0%, var(--peach-mid) 100%);
+      text-align: center;
+    }
+
+    .download-inner { max-width: 600px; margin: 0 auto; }
+
+    .download .section-title { margin-bottom: 0.8rem; }
+
+    .download p {
+      color: var(--pit-mid);
+      margin-bottom: 2rem;
+      font-size: 1.05rem;
+    }
+
+    /* CONTACT */
+    .contact {
+      background: var(--white);
+    }
+
+    .contact-inner {
+      max-width: 560px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .contact p {
+      color: var(--text-light);
+      margin-bottom: 2rem;
+      font-size: 1rem;
+      line-height: 1.7;
+    }
+
+    .contact-form {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      text-align: left;
+    }
+
+    .form-group label {
+      display: block;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--pit);
+      margin-bottom: 0.4rem;
+    }
+
+    .form-group input,
+    .form-group textarea {
+      width: 100%;
+      padding: 0.8rem 1rem;
+      border: 1.5px solid var(--peach-mid);
+      border-radius: 10px;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.95rem;
+      color: var(--text);
+      background: var(--peach-light);
+      outline: none;
+      transition: border-color 0.2s;
+    }
+
+    .form-group input:focus,
+    .form-group textarea:focus {
+      border-color: var(--peach-dark);
+    }
+
+    .form-group textarea { resize: vertical; min-height: 120px; }
+
+    .submit-btn {
+      background: var(--pit);
+      color: var(--white);
+      border: none;
+      padding: 0.9rem 2rem;
+      border-radius: 12px;
+      font-family: 'Inter', sans-serif;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.2s, transform 0.2s;
+    }
+
+    .submit-btn:hover {
+      background: var(--peach-dark);
+      transform: translateY(-1px);
+    }
+
+    /* SOCIAL */
+    .social {
+      background: var(--gray);
+      text-align: center;
+      padding: 3rem 2rem;
+    }
+
+    .social-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.4rem;
+      color: var(--pit);
+      margin-bottom: 1.5rem;
+    }
+
+    .social-links {
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+    }
+
+    .social-link {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background: var(--white);
+      border: 2px solid var(--peach);
+      text-decoration: none;
+      transition: background 0.2s, transform 0.2s;
+    }
+
+    .social-link:hover {
+      background: var(--peach);
+      transform: translateY(-2px);
+    }
+
+    .social-link svg { width: 20px; height: 20px; color: var(--pit); }
+
+    /* FOOTER */
+    footer {
+      background: var(--pit);
+      color: rgba(255,255,255,0.5);
+      text-align: center;
+      padding: 2rem;
+      font-size: 0.85rem;
+    }
+
+    footer a {
+      color: var(--peach-mid);
+      text-decoration: none;
+      margin: 0 0.75rem;
+    }
+
+    footer a:hover { color: var(--peach); }
+
+    .footer-links { margin-bottom: 0.8rem; }
+
+    /* RESPONSIVE */
+    @media (max-width: 768px) {
+      .how-inner, .friends-inner {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+
+      .friends-visual { height: 200px; }
+
+      .nav-links { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <a href="#" class="nav-logo">
+      <img src="https://img1.wsimg.com/isteam/ip/79dcbee0-95e0-4680-8d71-11d6a086a89e/Untitled%20design%20(4).png/:/rs=w:100,h:100,cg:true,m/cr=w:100,h:100" alt="Peach and Pit logo" />
+      <span>Peach and Pit</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="#how">How it Works</a></li>
+      <li><a href="#reviews">Reviews</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- PROMO BANNER -->
+  <div class="promo-banner">
+    Use code <strong>NEW25</strong> for a free month of premium!
+  </div>
+
+  <!-- HERO -->
+  <section class="hero">
+    <p class="hero-eyebrow">Daily Reflection App</p>
+    <h1>A quick way to <em>journal</em></h1>
+    <p>Capture your best and worst moments daily with friends.</p>
+    <div class="store-buttons">
+      <a href="https://apps.apple.com/us/app/peach-and-pit/id6736346637" class="store-btn apple" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+        App Store
+      </a>
+      <a href="https://play.google.com/store/apps/details?id=com.spencersilva.peachandpit&pcampaignid=web_share" class="store-btn google" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M3.18 23.76c.3.17.64.24.99.2l12.47-7.2-2.54-2.54-10.92 9.54zm-1.7-20.3C1.2 3.83 1 4.28 1 4.87v14.26c0 .59.2 1.04.49 1.41l.08.07L9.15 12v-.2L1.56 3.38l-.08.08zM18.76 9.8l-2.56-1.48-2.87 2.87 2.87 2.87 2.59-1.5c.74-.43.74-1.33-.03-1.76zM4.17.24L16.64 7.44l-2.54 2.54L4.17 1.43c-.45-.26-.88-.25-1.18-.08l1.18-1.11z"/></svg>
+        Google Play
+      </a>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section class="how" id="how">
+    <div class="how-inner">
+      <div class="how-image">
+        <img src="https://img1.wsimg.com/isteam/ip/79dcbee0-95e0-4680-8d71-11d6a086a89e/Untitled%20design%20(4).png/:/rs=w:600,h:800,cg:true,m/cr=w:600,h:800" alt="Peach and Pit app screenshot" />
+      </div>
+      <div class="how-content">
+        <p class="section-eyebrow">How it works</p>
+        <h2 class="section-title">It's simple.</h2>
+        <p>Once a day, users share their <strong>Peach</strong> (best part) and their <strong>Pit</strong> (worst part) — then rate their day on a scale from 1 to 5.</p>
+        <div class="how-steps">
+          <div class="how-step">
+            <div class="step-num">1</div>
+            <div class="step-text">
+              <strong>Share your Peach 🍑</strong>
+              <span>What was the best part of your day?</span>
+            </div>
+          </div>
+          <div class="how-step">
+            <div class="step-num">2</div>
+            <div class="step-text">
+              <strong>Share your Pit 🪨</strong>
+              <span>What was the hardest part of your day?</span>
+            </div>
+          </div>
+          <div class="how-step">
+            <div class="step-num">3</div>
+            <div class="step-text">
+              <strong>Rate your day</strong>
+              <span>Score it 1–5 and see how your week looked over time.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOLLOW FRIENDS -->
+  <section class="friends">
+    <div class="friends-inner">
+      <div class="friends-content">
+        <p class="section-eyebrow">Stay Connected</p>
+        <h2 class="section-title">Follow Friends</h2>
+        <p>Follow friends and see their daily posts to stay connected — no matter where life takes you. It's a simple, meaningful way to keep up with the people who matter most.</p>
+      </div>
+      <div class="friends-visual">🍑</div>
+    </div>
+  </section>
+
+  <!-- REVIEWS -->
+  <section class="reviews" id="reviews">
+    <div class="reviews-inner">
+      <p class="section-eyebrow" style="text-align:center;">What people are saying</p>
+      <h2 class="section-title">Discover the Power of Peach and Pit</h2>
+      <div class="reviews-grid">
+        <div class="review-card">
+          <div class="review-stars">★★★★★</div>
+          <div class="review-title">Best Journal App</div>
+          <p class="review-text">"This app has changed my life! Helps me be more mindful and grateful for the little things. It's very easy to use and the reminders have helped me develop a positive habit of journaling daily."</p>
+          <div class="review-author">APagh</div>
+        </div>
+        <div class="review-card">
+          <div class="review-stars">★★★★★</div>
+          <div class="review-title">Great app!</div>
+          <p class="review-text">"This app has really helped me be more grateful! And it's been a great way to help me stay connected with friends and family from far away!"</p>
+          <div class="review-author">Tyla04</div>
+        </div>
+        <div class="review-card">
+          <div class="review-stars">★★★★★</div>
+          <div class="review-title">Best Journal App out there.</div>
+          <p class="review-text">"It's super easy to post about your day and it's fun to look back on and read old journal entries!"</p>
+          <div class="review-author">BallerBeast212</div>
+        </div>
+        <div class="review-card">
+          <div class="review-stars">★★★★★</div>
+          <div class="review-title">Focusing on the important things</div>
+          <p class="review-text">"I have always wanted to journal, but I find it hard to sacrifice time during the day to write how my day went. This is the perfect way to remember the most important parts."</p>
+          <div class="review-author">Forrest I.</div>
+        </div>
+        <div class="review-card">
+          <div class="review-stars">★★★★★</div>
+          <div class="review-title">A game changer!</div>
+          <p class="review-text">"I'm so glad I found this app! It lets me focus on the most important parts of my day, with a simple design that helps me reflect on both the good and the 'not so good' moments."</p>
+          <div class="review-author">Ellie Mik</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DOWNLOAD CTA -->
+  <section class="download">
+    <div class="download-inner">
+      <p class="section-eyebrow" style="text-align:center;">Get the app</p>
+      <h2 class="section-title">Download it today!</h2>
+      <p>Available free on iOS and Android. Start reflecting in minutes.</p>
+      <div class="store-buttons">
+        <a href="https://apps.apple.com/us/app/peach-and-pit/id6736346637" class="store-btn apple" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+          App Store
+        </a>
+        <a href="https://play.google.com/store/apps/details?id=com.spencersilva.peachandpit&pcampaignid=web_share" class="store-btn google" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M3.18 23.76c.3.17.64.24.99.2l12.47-7.2-2.54-2.54-10.92 9.54zm-1.7-20.3C1.2 3.83 1 4.28 1 4.87v14.26c0 .59.2 1.04.49 1.41l.08.07L9.15 12v-.2L1.56 3.38l-.08.08zM18.76 9.8l-2.56-1.48-2.87 2.87 2.87 2.87 2.59-1.5c.74-.43.74-1.33-.03-1.76zM4.17.24L16.64 7.44l-2.54 2.54L4.17 1.43c-.45-.26-.88-.25-1.18-.08l1.18-1.11z"/></svg>
+          Google Play
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="contact" id="contact">
+    <div class="contact-inner">
+      <p class="section-eyebrow">Get in touch</p>
+      <h2 class="section-title">Contact Us</h2>
+      <p>Have a question or feedback? We'd love to hear from you.</p>
+      <form class="contact-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" placeholder="Your name" />
+        </div>
+        <div class="form-group">
+          <label for="email">Email *</label>
+          <input type="email" id="email" name="email" placeholder="your@email.com" required />
+        </div>
+        <div class="form-group">
+          <label for="message">Message</label>
+          <textarea id="message" name="message" placeholder="What's on your mind?"></textarea>
+        </div>
+        <button type="submit" class="submit-btn">Send Message</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- SOCIAL -->
+  <section class="social">
+    <h3 class="social-title">Follow Along</h3>
+    <div class="social-links">
+      <a href="https://www.instagram.com/peach_and_pit/" class="social-link" target="_blank" rel="noopener" aria-label="Instagram">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.5" fill="currentColor"/></svg>
+      </a>
+      <a href="https://www.tiktok.com/@peach_and_pit" class="social-link" target="_blank" rel="noopener" aria-label="TikTok">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.69a8.18 8.18 0 004.78 1.52V6.77a4.85 4.85 0 01-1.01-.08z"/></svg>
+      </a>
+      <a href="https://www.x.com/peach_and_pit" class="social-link" target="_blank" rel="noopener" aria-label="X / Twitter">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+      </a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-links">
+      <a href="/privacy-policy">Privacy Policy</a>
+      <a href="/terms-and-conditions">Terms and Conditions</a>
+    </div>
+    <p>Copyright © 2026 Peach and Pit — All Rights Reserved.</p>
+  </footer>
+
+</body>
+</html>
