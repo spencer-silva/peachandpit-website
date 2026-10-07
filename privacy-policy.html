@@ -4,6 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Privacy Policy — Peach and Pit</title>
+  <link rel="icon" type="image/png" href="Designer-4-removebg-preview.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
@@ -215,6 +216,41 @@
       margin: 2.5rem 0;
     }
 
+    /* TABLES */
+    .policy-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1rem 0 1.2rem;
+      font-size: 0.9rem;
+    }
+
+    .policy-table th {
+      background: var(--peach-light);
+      color: var(--pit);
+      font-weight: 600;
+      text-align: left;
+      padding: 0.7rem 1rem;
+      border-bottom: 2px solid var(--peach-mid);
+    }
+
+    .policy-table td {
+      padding: 0.7rem 1rem;
+      color: var(--text-light);
+      line-height: 1.6;
+      border-bottom: 1px solid var(--peach-mid);
+      vertical-align: top;
+    }
+
+    .policy-table tr:last-child td { border-bottom: none; }
+    .policy-table tr:nth-child(even) td { background: var(--gray); }
+
+    .address-block {
+      font-size: 0.95rem;
+      color: var(--text-light);
+      line-height: 1.8;
+      margin: 0.5rem 0 1rem;
+    }
+
     /* FOOTER */
     footer {
       background: var(--pit);
@@ -232,13 +268,18 @@
 
     footer a:hover { color: var(--peach); }
     .footer-links { margin-bottom: 0.8rem; }
+
+    @media (max-width: 600px) {
+      .policy-table { font-size: 0.82rem; }
+      .policy-table th, .policy-table td { padding: 0.6rem 0.6rem; }
+    }
   </style>
 </head>
 <body>
 
   <nav>
     <a href="/" class="nav-logo">
-      <img src="https://img1.wsimg.com/isteam/ip/79dcbee0-95e0-4680-8d71-11d6a086a89e/Untitled%20design%20(4).png/:/rs=w:100,h:100,cg:true,m/cr=w:100,h:100" alt="Peach and Pit logo" />
+      <img src="Designer-4-removebg-preview.png" alt="Peach and Pit logo" />
       <span>Peach and Pit</span>
     </a>
     <a href="/" class="nav-back">← Back to Home</a>
@@ -247,129 +288,340 @@
   <div class="page-hero">
     <p>Legal</p>
     <h1>Privacy Policy</h1>
-    <span class="last-updated">Last updated: June 2026</span>
+    <span class="last-updated">Effective: [publish date]</span>
   </div>
 
   <div class="content">
 
-    <p class="intro">We are committed to protecting your privacy. This Privacy Policy explains how we handle your personal data when you use the Peach and Pit journaling app.</p>
+    <p class="intro">Peach and Pit is a daily journaling and social app made by Peach and Pit App LLC. This policy explains what we collect, why we collect it, who we share it with, how long we keep it, and the choices you have.<br><br>
+    <strong>The short version:</strong> we use your information to run the app, we don't sell it, your journal entries are never used for advertising, and you can delete your account and data at any time from Settings.</p>
 
     <div class="policy-section">
-      <h2><span class="section-num">1</span> Information We Collect</h2>
-      <p>When you use our App, we collect and store the following personal data:</p>
-      <ul>
-        <li><strong>Account Information:</strong> Your email address and username when you create an account.</li>
-        <li><strong>Journaling Data:</strong> Any entries you make in the journaling app, which may include personal reflections, thoughts, or other information.</li>
-        <li><strong>User-Generated Content:</strong> Photos that you may choose to upload to your profile picture or include in your posts.</li>
-        <li><strong>Location Data (with your consent):</strong> If you grant the App permission to access your device's location services, we collect your precise location (e.g., latitude and longitude) while the App is in use. We only collect this data if you explicitly grant permission through the device's operating system when prompted.</li>
-        <li><strong>Transaction and Purchase Data:</strong> Information related to your purchases within the App, such as subscription type, amount paid, and date of transaction. We do not collect or store your full payment card details.</li>
-        <li><strong>Usage Data & Analytics:</strong> Information about how you interact with the App, such as features used, time spent, and technical information about your device.</li>
-        <li><strong>Advertising Identifiers (with your consent):</strong> If you grant permission through Apple's App Tracking Transparency (ATT) framework, we may collect advertising identifiers to deliver personalized ads and measure campaign effectiveness.</li>
-      </ul>
-    </div>
-
-    <hr class="divider" />
-
-    <div class="policy-section">
-      <h2><span class="section-num">2</span> How We Collect Information</h2>
-      <ul>
-        <li><strong>Directly from you:</strong> When you create an account, enter journal entries, or upload photos.</li>
-        <li><strong>Automatically:</strong> Through your use of the App, for analytics and advertising purposes.</li>
-        <li><strong>From Third-Party App Stores:</strong> We receive transaction receipts and confirmation of purchases from the platform you use (e.g., Apple App Store, Google Play Store).</li>
-      </ul>
-    </div>
-
-    <hr class="divider" />
-
-    <div class="policy-section">
-      <h2><span class="section-num">3</span> Use of Information</h2>
-      <p>We use your information for the following purposes:</p>
-      <ul>
-        <li><strong>To provide and manage your account:</strong> Authenticating users and maintaining your account.</li>
-        <li><strong>To fulfill and manage purchases:</strong> Granting access to Premium features or applying benefits of one-time purchases.</li>
-        <li><strong>To store your journal entries securely:</strong> So you can access them across devices and share them as intended within the App.</li>
-        <li><strong>To enable social features:</strong> We use your location data (if permitted) to allow you and other users to discover and follow each other based on proximity.</li>
-        <li><strong>To improve the App:</strong> By analyzing usage patterns and addressing technical issues.</li>
-        <li><strong>To display advertisements:</strong> If you consent to app tracking, we use collected data to show relevant advertisements and measure their performance.</li>
-        <li><strong>For internal analytics and research:</strong> To understand user behavior and enhance the App's features.</li>
-      </ul>
-      <div class="highlight-box">
-        We do not sell or rent your personal information to third parties. We only share your information as described in this policy, including with service providers necessary to operate the App (e.g., Firebase) and with advertising partners (with your consent).
+      <h2><span class="section-num">1</span> Who We Are</h2>
+      <p>Peach and Pit App LLC is responsible for your personal information (the "controller").</p>
+      <div class="address-block">
+        Peach and Pit App LLC<br>
+        7533 S Center View Ct, Ste N<br>
+        West Jordan, UT 84084, USA<br>
+        <a href="mailto:support@peachandpit.com">support@peachandpit.com</a>
       </div>
     </div>
 
     <hr class="divider" />
 
     <div class="policy-section">
-      <h2><span class="section-num">4</span> Data Storage and Security</h2>
-      <p>All data is stored securely in the cloud (Firebase) and is encrypted both in transit and at rest to protect your privacy and data security. We employ additional security measures to prevent unauthorized access, disclosure, alteration, or destruction of your data.</p>
-      <p>However, no method of data transmission or storage is completely secure. While we strive to protect your information, we cannot guarantee its absolute security.</p>
-    </div>
-
-    <hr class="divider" />
-
-    <div class="policy-section">
-      <h2><span class="section-num">5</span> Payments and Transaction Data</h2>
-      <ul>
-        <li><strong>Payment Processing:</strong> All payments are processed by the respective third-party platform (Apple App Store or Google Play Store). We do not directly collect, store, or process your credit card numbers or other sensitive financial information.</li>
-        <li><strong>Data Collected:</strong> We receive transaction-related data from the platform to confirm your purchase and manage your access to paid features.</li>
-        <li><strong>Security:</strong> The third-party platforms that process your payment information are solely responsible for its security and handling.</li>
-      </ul>
-    </div>
-
-    <hr class="divider" />
-
-    <div class="policy-section">
-      <h2><span class="section-num">6</span> App Tracking Transparency (ATT)</h2>
-      <p>When you first launch Peach and Pit, you will be prompted to grant or deny permission for us to track your activity across other companies' apps and websites. If you choose "Ask App Not to Track," we will not track your activity for advertising purposes — you will still have full access to all App features.</p>
+      <h2><span class="section-num">2</span> Information We Collect</h2>
+      <table class="policy-table">
+        <thead>
+          <tr>
+            <th>Category</th>
+            <th>What it includes</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Account and profile</strong></td>
+            <td>Email address, username, first and last name, date of birth, profile and cover photos, bio, and your settings (privacy choices, theme, reminder time, notification preferences). If you sign in with Google, we receive your name and email address from Google. Passwords are handled by Firebase Authentication and stored only in hashed form.</td>
+          </tr>
+          <tr>
+            <td><strong>Journal entries</strong></td>
+            <td>Your daily peach and pit, your 1–10 day rating, any photo you add, "big moment" markers, each entry's privacy settings, and your streaks and badges.</td>
+          </tr>
+          <tr>
+            <td><strong>Social activity</strong></td>
+            <td>Who you follow and who follows you, follow requests, likes, comments and replies, mentions, groups you create or join and invites you send or receive, people you block, and reports you file.</td>
+          </tr>
+          <tr>
+            <td><strong>Location</strong></td>
+            <td>Your precise location (latitude and longitude), only if you allow it in your device settings. See section 6.</td>
+          </tr>
+          <tr>
+            <td><strong>Purchases</strong></td>
+            <td>Your subscription or purchase type, price and date, and your Premium status, as reported by the App Store or Google Play. Promo and referral codes you use. We never receive your card details.</td>
+          </tr>
+          <tr>
+            <td><strong>Device and technical</strong></td>
+            <td>A push-notification token for your device, device model, operating-system version, app version, and app-integrity checks that help us block fake or tampered apps.</td>
+          </tr>
+          <tr>
+            <td><strong>Support and feedback</strong></td>
+            <td>Messages and feedback you send us, with your device model, operating-system version and app version.</td>
+          </tr>
+          <tr>
+            <td><strong>Usage</strong></td>
+            <td>How you use the app, such as which features and screens you use, collected through Google Analytics for Firebase.</td>
+          </tr>
+          <tr>
+            <td><strong>Advertising</strong></td>
+            <td>Your device's advertising identifier (only where you allow it) and how you interact with ads. See section 7.</td>
+          </tr>
+        </tbody>
+      </table>
       <div class="highlight-box">
-        You can change your tracking preferences at any time in <strong>Settings → Privacy & Security → Tracking</strong>.
+        Your journal may include sensitive things about your health, mood or personal life. We use it only to provide the journaling features you ask for. It is never used for advertising.
       </div>
     </div>
 
     <hr class="divider" />
 
     <div class="policy-section">
-      <h2><span class="section-num">7</span> Advertising</h2>
-      <p>We display advertisements within the App. To make them more relevant (if you've consented to tracking), we partner with third-party advertising networks. These networks may collect your advertising identifier (IDFA, if permitted), IP address, and app usage data to deliver personalized ads and measure performance.</p>
-      <p>To limit personalized advertising on iOS: go to <strong>Settings → Privacy & Security → Tracking</strong> and toggle off "Allow Apps to Request to Track."</p>
+      <h2><span class="section-num">3</span> How We Collect It</h2>
+      <ul>
+        <li><strong>From you,</strong> when you create an account, write entries, upload photos, follow people, comment, send feedback or file a report.</li>
+        <li><strong>Automatically,</strong> when you use the app: usage, device and technical information, and your location if you've allowed it.</li>
+        <li><strong>From Google,</strong> if you sign in with Google: your name and email address.</li>
+        <li><strong>From the App Store and Google Play,</strong> when you buy Premium: what you bought and when.</li>
+        <li><strong>From other users,</strong> when they follow you, mention you, invite you to a group or report your account or content.</li>
+      </ul>
     </div>
 
     <hr class="divider" />
 
     <div class="policy-section">
-      <h2><span class="section-num">8</span> Children's Privacy</h2>
-      <p>Our App is not intended for children under the age of 13. We do not knowingly collect personal information from children under 13. If you believe we may have collected information from a child under 13, please contact us at <a href="mailto:support@peachandpit.com">support@peachandpit.com</a>.</p>
-    </div>
-
-    <hr class="divider" />
-
-    <div class="policy-section">
-      <h2><span class="section-num">9</span> Third-Party Links and Services</h2>
-      <p>Our App may contain links to external websites or services that are not operated by us. We are not responsible for the privacy practices of these third-party sites. We use third-party service providers like Firebase for data storage — these providers are bound by their own privacy policies and data protection standards.</p>
-    </div>
-
-    <hr class="divider" />
-
-    <div class="policy-section">
-      <h2><span class="section-num">10</span> Data Retention</h2>
-      <p>We retain your personal information, including journal entries and user-generated content, for as long as you maintain an account with us.</p>
-      <p>You may request deletion of your account and all associated data at any time by contacting us at <a href="mailto:support@peachandpit.com">support@peachandpit.com</a>. Upon request, all data will be permanently removed from our systems within 30 days, unless required for legal compliance.</p>
-    </div>
-
-    <hr class="divider" />
-
-    <div class="policy-section">
-      <h2><span class="section-num">11</span> Changes to This Privacy Policy</h2>
-      <p>We may update this Privacy Policy from time to time to reflect changes in our practices or for legal or regulatory reasons. Any changes will be posted on this page with an updated date. For significant changes, we may provide notice through an in-app notification or email.</p>
-    </div>
-
-    <hr class="divider" />
-
-    <div class="policy-section">
-      <h2><span class="section-num">12</span> Contact Us</h2>
-      <p>If you have any questions or concerns about this Privacy Policy or your data, please contact us at:</p>
+      <h2><span class="section-num">4</span> How We Use It, and Our Legal Basis</h2>
+      <p>We use your information only for the purposes below. If you're in the EU, EEA, UK or Switzerland, the law requires us to name the legal basis for each one.</p>
+      <table class="policy-table">
+        <thead>
+          <tr>
+            <th>Purpose</th>
+            <th>Information used</th>
+            <th>Legal basis</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Run your account, journal and social features</td>
+            <td>Account and profile, journal entries, social activity</td>
+            <td>Needed to provide the service you signed up for</td>
+          </tr>
+          <tr>
+            <td>Process purchases and Premium</td>
+            <td>Purchases</td>
+            <td>Needed to provide the service; legal obligations for transaction records</td>
+          </tr>
+          <tr>
+            <td>Send reminders and notifications</td>
+            <td>Device token, your notification settings</td>
+            <td>Needed to provide the service. You can turn notifications off in your device settings.</td>
+          </tr>
+          <tr>
+            <td>Show you people nearby</td>
+            <td>Location</td>
+            <td>Your consent, which you can withdraw at any time</td>
+          </tr>
+          <tr>
+            <td>Keep the app safe: moderation, preventing abuse and fraud, blocking tampered apps</td>
+            <td>Reports, blocks, account and device information</td>
+            <td>Our legitimate interest in a safe community</td>
+          </tr>
+          <tr>
+            <td>Answer support requests and feedback</td>
+            <td>Support and feedback</td>
+            <td>Our legitimate interest in helping you</td>
+          </tr>
+          <tr>
+            <td>Understand and improve the app</td>
+            <td>Usage, device and technical</td>
+            <td>Your consent where the law requires it; otherwise our legitimate interest in improving the app</td>
+          </tr>
+          <tr>
+            <td>Show ads</td>
+            <td>Advertising, device information</td>
+            <td>Your consent for personalized ads; our legitimate interest for limited, non-personalized ads</td>
+          </tr>
+          <tr>
+            <td>Meet legal obligations and protect rights</td>
+            <td>Whatever a specific request requires</td>
+            <td>Legal obligation, or our legitimate interest in defending legal claims</td>
+          </tr>
+        </tbody>
+      </table>
       <div class="highlight-box">
+        We don't sell or rent your personal information, and we don't use it to make automated decisions that have legal or similarly significant effects on you.
+      </div>
+    </div>
+
+    <hr class="divider" />
+
+    <div class="policy-section">
+      <h2><span class="section-num">5</span> Who We Share It With</h2>
+      <p><strong>Other Peach and Pit users.</strong> Your username, name, profile and cover photos, bio and follower counts are visible to other users. Your journal entries, photos, likes and comments are visible according to the privacy settings you choose for your account and for each entry. Members of groups you join can see your activity in that group. If you've shared your location, people using the Nearby feature can find your profile.</p>
+      <p><strong>Service providers</strong> that process data on our behalf, under contracts that limit how they can use it:</p>
+      <table class="policy-table">
+        <thead>
+          <tr>
+            <th>Provider</th>
+            <th>What they do</th>
+            <th>What they receive</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Google (Firebase)</strong></td>
+            <td>Accounts, database, photo storage, server functions, push notifications, app-integrity checks, analytics</td>
+            <td>Everything stored in the app, plus usage and device information</td>
+          </tr>
+          <tr>
+            <td><strong>Google AdMob</strong></td>
+            <td>Ads</td>
+            <td>Device and advertising information. Never your journal entries.</td>
+          </tr>
+          <tr>
+            <td><strong>Google Sign-In</strong></td>
+            <td>Signing in with Google, if you choose it</td>
+            <td>Your sign-in request</td>
+          </tr>
+          <tr>
+            <td><strong>Slack</strong></td>
+            <td>Our internal tool for reviewing reports and feedback</td>
+            <td>Names, account IDs and report details including the reported content. For feedback, also your device model, operating-system version and app version.</td>
+          </tr>
+          <tr>
+            <td><strong>Shorebird</strong></td>
+            <td>Delivers app updates</td>
+            <td>Your app version, device platform and a random install identifier</td>
+          </tr>
+        </tbody>
+      </table>
+      <p>Apple and Google Play process your payments under their own privacy policies. We receive only what's listed in section 2.</p>
+      <p><strong>Legal and safety.</strong> We share information when the law requires it, or when it's necessary to protect someone's safety or our users' rights.</p>
+      <p><strong>Business changes.</strong> If Peach and Pit App LLC is involved in a merger, acquisition or sale of assets, your information may transfer as part of it. This policy will continue to apply to it.</p>
+      <div class="highlight-box">
+        We don't sell or rent your personal information to anyone.
+      </div>
+    </div>
+
+    <hr class="divider" />
+
+    <div class="policy-section">
+      <h2><span class="section-num">6</span> Location</h2>
+      <p>We collect your precise location only if you allow it in your device's permission prompt, and only while you're using the app. We use it for one thing: showing you people nearby and letting them find you. We save your most recent location on your profile so the Nearby feature works.</p>
+      <p>To stop sharing your location, turn off location access for Peach and Pit in your device settings. We'll stop collecting new locations straight away. Your last saved location stays on your profile until you delete your account.</p>
+    </div>
+
+    <hr class="divider" />
+
+    <div class="policy-section">
+      <h2><span class="section-num">7</span> Advertising, Analytics and Tracking</h2>
+      <p><strong>Ads.</strong> We show ads through Google AdMob, including the optional ads you can watch to support us. Google collects device information and how you interact with ads in order to show, limit and measure them. Your journal entries are never shared with advertisers.</p>
+      <p><strong>Your advertising identifier.</strong> On iPhone, we don't access your device's advertising identifier unless you allow it through Apple's tracking prompt. You can change this any time in <strong>Settings → Privacy &amp; Security → Tracking</strong>. On Android, you can reset or delete your advertising ID in your device's Google settings under Ads.</p>
+      <p>If you're in the EU, EEA, UK or Switzerland, we ask for your consent before we or Google use your information for personalized ads or analytics. You can change your choice any time in <strong>Settings → Manage privacy choices</strong>.</p>
+      <p><strong>Analytics.</strong> We use Google Analytics for Firebase to understand which features people use and where the app breaks. It isn't linked to your name or email address.</p>
+    </div>
+
+    <hr class="divider" />
+
+    <div class="policy-section">
+      <h2><span class="section-num">8</span> Where Your Data Is Stored</h2>
+      <p>Peach and Pit App LLC is based in the United States. Your information is stored on Google Cloud servers in the United States, so if you use the app from another country, your information is transferred there.</p>
+      <p>For transfers from the EU, EEA, UK or Switzerland, we rely on our providers' certification under the EU–US Data Privacy Framework (and its UK and Swiss extensions), and on the European Commission's Standard Contractual Clauses where a provider isn't certified. Email us for a copy of the safeguards that apply.</p>
+    </div>
+
+    <hr class="divider" />
+
+    <div class="policy-section">
+      <h2><span class="section-num">9</span> How Long We Keep It, and Deleting Your Account</h2>
+      <p>You can delete your account at any time in <strong>Settings → Profile Settings → Delete Account</strong>. This permanently deletes your profile, journal entries, photos, comments, likes, followers, group memberships, feedback and saved location. If you signed in with Google, it also disconnects Peach and Pit from your Google account. Your data is removed from our systems within 30 days.</p>
+      <p>Deleting your account doesn't cancel a Premium subscription. Cancel it in your App Store or Google Play subscription settings.</p>
+      <table class="policy-table">
+        <thead>
+          <tr>
+            <th>Information</th>
+            <th>How long we keep it</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Account, profile, journal entries, social activity, location, feedback</td>
+            <td>Until you delete your account</td>
+          </tr>
+          <tr>
+            <td>Moderation reports, including reports about your account or content</td>
+            <td>12 months from when the report was filed, then deleted automatically. This applies after an account is deleted too. Reports you filed about others are kept with your name and account ID removed.</td>
+          </tr>
+          <tr>
+            <td>Copies of reports and feedback in Slack</td>
+            <td>12 months</td>
+          </tr>
+          <tr>
+            <td>Analytics</td>
+            <td>As set by Google Analytics for Firebase</td>
+          </tr>
+          <tr>
+            <td>Server logs</td>
+            <td>About 30 days</td>
+          </tr>
+          <tr>
+            <td>Purchase records</td>
+            <td>Kept by Apple or Google Play under their own policies</td>
+          </tr>
+        </tbody>
+      </table>
+      <p>We keep moderation reports after an account is deleted so that deleting an account can't erase a record of harassment or threats, and so we can respond to legal requests. We may also keep specific information longer if the law requires it.</p>
+    </div>
+
+    <hr class="divider" />
+
+    <div class="policy-section">
+      <h2><span class="section-num">10</span> Your Rights and Choices</h2>
+      <p>Wherever you live, you can ask us to:</p>
+      <ul>
+        <li><strong>Access</strong> the personal information we hold about you and get a copy of it in a portable format.</li>
+        <li><strong>Correct it.</strong> You can edit most of your profile yourself in the app.</li>
+        <li><strong>Delete it.</strong> You can delete your account yourself in <strong>Settings → Profile Settings → Delete Account</strong>.</li>
+        <li><strong>Restrict or object</strong> to how we use it, including where we rely on our legitimate interests.</li>
+        <li><strong>Withdraw consent</strong> where we rely on it. Location and notifications: your device settings. Ads and analytics: Settings → Manage privacy choices. Withdrawing doesn't affect anything we did before you withdrew.</li>
+      </ul>
+      <p>For anything you can't do in the app, email <a href="mailto:support@peachandpit.com">support@peachandpit.com</a> from the address on your account. We may ask you to confirm your identity first, and we'll respond within one month.</p>
+      <p>If you're in the EU, EEA, UK or Switzerland, these are legal rights, and you can also complain to your local data protection authority. We'd appreciate the chance to sort it out with you first.</p>
+    </div>
+
+    <hr class="divider" />
+
+    <div class="policy-section">
+      <h2><span class="section-num">11</span> Children</h2>
+      <p>You must be at least 13 to use Peach and Pit. We ask for your date of birth when you sign up. If you're under 13, we don't create an account, and any sign-in started with Google is removed. We keep your date of birth on your profile to confirm you meet the age requirement.</p>
+      <p>If we learn that someone under 13 has an account, we'll delete it. If you believe a child under 13 is using Peach and Pit, email <a href="mailto:support@peachandpit.com">support@peachandpit.com</a>.</p>
+    </div>
+
+    <hr class="divider" />
+
+    <div class="policy-section">
+      <h2><span class="section-num">12</span> Security</h2>
+      <p>Your information is encrypted in transit and at rest on Google Cloud. Access to it is limited to the people who run Peach and Pit, and we use app-integrity checks to block tampered copies of the app. No system is perfectly secure. If a breach affects your information, we'll tell you and the relevant authorities as the law requires.</p>
+    </div>
+
+    <hr class="divider" />
+
+    <div class="policy-section">
+      <h2><span class="section-num">13</span> Payments</h2>
+      <p>All payments are processed by Apple (App Store) or Google (Google Play). We never see or store your card details. We receive only what you bought, the price and the date, so we can unlock Premium.</p>
+    </div>
+
+    <hr class="divider" />
+
+    <div class="policy-section">
+      <h2><span class="section-num">14</span> Third-Party Links and Services</h2>
+      <p>The app may link to other websites and services, such as sharing to Instagram. Signing in with Google is covered by Google's privacy policy. We're not responsible for how other companies handle your information, so check their policies too.</p>
+    </div>
+
+    <hr class="divider" />
+
+    <div class="policy-section">
+      <h2><span class="section-num">15</span> Changes to This Policy</h2>
+      <p>When we update this policy, we'll change the effective date at the top. If a change significantly affects how we use your information, we'll tell you in the app before it takes effect.</p>
+      <p>Peach and Pit is a mobile app, so it doesn't receive web browsers' "Do Not Track" signals. Use the device settings described in sections 6 and 7 instead.</p>
+    </div>
+
+    <hr class="divider" />
+
+    <div class="policy-section">
+      <h2><span class="section-num">16</span> Contact Us</h2>
+      <p>Questions or requests about your privacy:</p>
+      <div class="highlight-box">
+        Peach and Pit App LLC<br>
+        7533 S Center View Ct, Ste N<br>
+        West Jordan, UT 84084, USA<br>
         📧 <a href="mailto:support@peachandpit.com">support@peachandpit.com</a>
       </div>
     </div>
