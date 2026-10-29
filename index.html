@@ -5,11 +5,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Peach and Pit</title>
   <meta name="description" content="Peach and Pit: Your daily reflection app. Track best & worst moments, share photos, connect with friends." />
-  <meta property="og:title" content="The Peach and Pit Project" />
-  <meta property="og:description" content="Capture your best and worst moments daily with friends." />
+  <meta property="og:title" content="Peach and Pit" />
+  <meta property="og:description" content="A quick way to journal. Share your best and worst of every day with friends." />
   <meta property="og:type" content="website" />
-  <meta name="twitter:card" content="summary" />
+  <meta property="og:url" content="https://peachandpit.com/" />
+  <meta property="og:image" content="https://peachandpit.com/images/og-image.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:site" content="@peach_and_pit" />
+  <meta name="twitter:image" content="https://peachandpit.com/images/og-image.jpg" />
+  <meta name="apple-itunes-app" content="app-id=6736346637" />
   <link rel="icon" type="image/png" href="Designer-4-removebg-preview.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -102,6 +108,13 @@
     }
 
     .promo-banner strong { color: var(--peach); }
+
+    .promo-banner a {
+      color: var(--peach-mid);
+      text-decoration: underline;
+      text-underline-offset: 2px;
+      white-space: nowrap;
+    }
 
     /* HERO */
     .hero {
@@ -199,6 +212,36 @@
 
     .store-btn svg { width: 20px; height: 20px; flex-shrink: 0; }
 
+    .hero-phones {
+      display: block;
+      width: 100%;
+      max-width: 680px;
+      height: auto;
+      margin: 3rem auto 0;
+      position: relative;
+    }
+
+    /* Peach / Pit / Stem labels, styled like the tags in the app */
+    .tag {
+      display: inline-block;
+      color: var(--white);
+      font-size: 0.8rem;
+      font-weight: 700;
+      padding: 0.1rem 0.55rem;
+      border-radius: 5px;
+      margin-left: 0.3rem;
+      vertical-align: 1px;
+    }
+
+    .step-text .tag { font-size: 0.8rem; color: var(--white); line-height: 1.4; }
+
+    /* Keep section headings clear of the fixed nav when jumping to them */
+    section[id] { scroll-margin-top: 64px; }
+
+    .tag.peach { background: #6fdb7a; }
+    .tag.pit { background: #ef967b; }
+    .tag.stem { background: #8d6e63; }
+
     /* SECTION BASE */
     section { padding: 5rem 2rem; }
 
@@ -241,8 +284,7 @@
     .how-image img {
       width: 100%;
       max-width: 320px;
-      border-radius: 24px;
-      box-shadow: 0 20px 60px rgba(61,35,20,0.15);
+      height: auto;
       display: block;
       margin: 0 auto;
     }
@@ -318,6 +360,177 @@
       align-items: center;
       justify-content: center;
     }
+
+    .friends-visual img {
+      width: 100%;
+      max-width: 280px;
+      height: auto;
+      filter: drop-shadow(0 20px 40px rgba(61,35,20,0.18));
+    }
+
+    /* FEATURES */
+    .features { background: var(--white); }
+
+    .features-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .features-intro {
+      color: var(--text-light);
+      font-size: 1.05rem;
+      line-height: 1.7;
+      max-width: 560px;
+      margin: 0 auto 3rem;
+    }
+
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1.5rem;
+      text-align: left;
+    }
+
+    .feature-card {
+      background: var(--gray);
+      border-radius: 20px;
+      padding: 1.8rem;
+    }
+
+    .feature-card img {
+      width: 72px;
+      height: 72px;
+      display: block;
+      margin-bottom: 1rem;
+    }
+
+    .feature-card h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.2rem;
+      color: var(--pit);
+      margin-bottom: 0.5rem;
+    }
+
+    .feature-card p {
+      font-size: 0.92rem;
+      color: var(--text-light);
+      line-height: 1.6;
+    }
+
+    /* LOOK BACK */
+    .lookback { background: var(--peach-light); }
+
+    .lookback-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1.2fr;
+      gap: 4rem;
+      align-items: center;
+    }
+
+    .lookback-content p {
+      color: var(--text-light);
+      font-size: 1.05rem;
+      line-height: 1.8;
+      margin-bottom: 1rem;
+    }
+
+    .lookback-phones {
+      display: flex;
+      justify-content: center;
+      gap: 0.5rem;
+    }
+
+    .lookback-phones img {
+      width: 50%;
+      max-width: 280px;
+      height: auto;
+    }
+
+    .lookback-phones img:first-child { transform: rotate(-4deg); }
+    .lookback-phones img:last-child { transform: rotate(4deg); }
+
+    /* PREMIUM */
+    .premium { background: var(--gray); }
+
+    .premium-inner {
+      max-width: 900px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .premium-intro {
+      color: var(--text-light);
+      font-size: 1.05rem;
+      line-height: 1.7;
+      margin-bottom: 2.5rem;
+    }
+
+    .premium-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1rem;
+      text-align: left;
+      list-style: none;
+      margin-bottom: 2.5rem;
+    }
+
+    .premium-list li {
+      background: var(--white);
+      border-radius: 14px;
+      padding: 1.1rem 1.3rem;
+      font-size: 0.92rem;
+      color: var(--text-light);
+      line-height: 1.5;
+    }
+
+    .premium-list strong {
+      display: block;
+      color: var(--pit);
+      margin-bottom: 0.15rem;
+    }
+
+    .premium-ways {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1rem;
+    }
+
+    .premium-way {
+      border: 2px solid var(--peach);
+      border-radius: 16px;
+      padding: 1.4rem;
+      background: var(--white);
+    }
+
+    .premium-way .big {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: var(--peach-dark);
+      margin-bottom: 0.3rem;
+    }
+
+    .premium-way p {
+      font-size: 0.9rem;
+      color: var(--text-light);
+      line-height: 1.5;
+    }
+
+    .reviews-more {
+      text-align: center;
+      margin-top: 2.5rem;
+    }
+
+    .reviews-more a {
+      color: var(--peach);
+      font-weight: 600;
+      text-decoration: none;
+    }
+
+    .reviews-more a:hover { text-decoration: underline; }
 
     /* REVIEWS */
     .reviews {
@@ -412,58 +625,31 @@
       line-height: 1.7;
     }
 
-    .contact-form {
-      display: flex;
-      flex-direction: column;
-      gap: 1rem;
-      text-align: left;
-    }
-
-    .form-group label {
-      display: block;
-      font-size: 0.85rem;
-      font-weight: 600;
-      color: var(--pit);
-      margin-bottom: 0.4rem;
-    }
-
-    .form-group input,
-    .form-group textarea {
-      width: 100%;
-      padding: 0.8rem 1rem;
-      border: 1.5px solid var(--peach-mid);
-      border-radius: 10px;
-      font-family: 'Inter', sans-serif;
-      font-size: 0.95rem;
-      color: var(--text);
-      background: var(--peach-light);
-      outline: none;
-      transition: border-color 0.2s;
-    }
-
-    .form-group input:focus,
-    .form-group textarea:focus {
-      border-color: var(--peach-dark);
-    }
-
-    .form-group textarea { resize: vertical; min-height: 120px; }
-
-    .submit-btn {
+    .email-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
       background: var(--pit);
       color: var(--white);
-      border: none;
       padding: 0.9rem 2rem;
       border-radius: 12px;
-      font-family: 'Inter', sans-serif;
       font-size: 1rem;
       font-weight: 600;
-      cursor: pointer;
+      text-decoration: none;
       transition: background 0.2s, transform 0.2s;
     }
 
-    .submit-btn:hover {
+    .email-btn:hover {
       background: var(--peach-dark);
       transform: translateY(-1px);
+    }
+
+    .email-btn svg { width: 20px; height: 20px; }
+
+    .email-address {
+      margin-top: 1rem;
+      font-size: 0.9rem;
+      color: var(--text-light);
     }
 
     /* SOCIAL */
@@ -527,10 +713,13 @@
 
     /* RESPONSIVE */
     @media (max-width: 768px) {
-      .how-inner, .friends-inner {
+      .how-inner, .friends-inner, .lookback-inner {
         grid-template-columns: 1fr;
         gap: 2rem;
       }
+
+      /* Text first, then the picture, on phones */
+      .friends-visual { order: 2; }
 
       .nav-links { display: none; }
     }
@@ -546,6 +735,8 @@
     </a>
     <ul class="nav-links">
       <li><a href="#how">How it Works</a></li>
+      <li><a href="#features">Features</a></li>
+      <li><a href="#premium">Premium</a></li>
       <li><a href="#reviews">Reviews</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
@@ -553,14 +744,14 @@
 
   <!-- PROMO BANNER -->
   <div class="promo-banner">
-    Use code <strong>NEW25</strong> for a free month of premium!
+    New here? Enter code <strong>NEW25</strong> when you sign up for a free month of Premium. <a href="#premium">What's included</a>
   </div>
 
   <!-- HERO -->
   <section class="hero">
     <p class="hero-eyebrow">Daily Reflection App</p>
     <h1>A quick way to <em>journal</em></h1>
-    <p>Capture your best and worst moments daily with friends.</p>
+    <p>Share your best and worst of every day with friends.</p>
     <div class="store-buttons">
       <a href="https://apps.apple.com/us/app/peach-and-pit/id6736346637" class="store-btn apple" target="_blank" rel="noopener">
         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
@@ -571,13 +762,14 @@
         Google Play
       </a>
     </div>
+    <img class="hero-phones" src="images/hero-phones.webp" width="1400" height="1050" alt="Peach and Pit's feed, Monthly Recap and On this day screens" />
   </section>
 
   <!-- HOW IT WORKS -->
   <section class="how" id="how">
     <div class="how-inner">
       <div class="how-image">
-        <img src="howitworks.webp" alt="Peach and Pit app screenshot" />
+        <img src="images/phone-feed.webp" width="600" height="1133" alt="Peach and Pit feed with friends' Peach and Pit posts" loading="lazy" />
       </div>
       <div class="how-content">
         <p class="section-eyebrow">How it works</p>
@@ -587,22 +779,29 @@
           <div class="how-step">
             <div class="step-num">1</div>
             <div class="step-text">
-              <strong>Share your Peach 🍑</strong>
+              <strong>Share your <span class="tag peach">Peach</span></strong>
               <span>What was the best part of your day?</span>
             </div>
           </div>
           <div class="how-step">
             <div class="step-num">2</div>
             <div class="step-text">
-              <strong>Share your Pit 🪨</strong>
+              <strong>Share your <span class="tag pit">Pit</span></strong>
               <span>What was the hardest part of your day?</span>
             </div>
           </div>
           <div class="how-step">
             <div class="step-num">3</div>
             <div class="step-text">
+              <strong>Add a <span class="tag stem">Stem</span> (optional)</strong>
+              <span>The weird part of your day, or anything that's neither a peach nor a pit.</span>
+            </div>
+          </div>
+          <div class="how-step">
+            <div class="step-num">4</div>
+            <div class="step-text">
               <strong>Rate your day</strong>
-              <span>Score it 1–5 and see how your week looked over time.</span>
+              <span>Score it 1–5 and watch your calendar fill in with color.</span>
             </div>
           </div>
         </div>
@@ -618,7 +817,84 @@
         <h2 class="section-title">Follow Friends</h2>
         <p>Follow friends and see their daily posts to stay connected — no matter where life takes you. It's a simple, meaningful way to keep up with the people who matter most.</p>
       </div>
-      <div class="friends-visual"><img src="stayconnected.webp" alt="Stay connected with friends" style="width:100%;max-width:320px;border-radius:24px;box-shadow:0 20px 60px rgba(61,35,20,0.15);display:block;margin:0 auto;" /></div>
+      <div class="friends-visual"><img src="images/badges/found_a_friend.webp" width="240" height="240" alt="Found a Friend badge" loading="lazy" /></div>
+    </div>
+  </section>
+
+  <!-- FEATURES -->
+  <section class="features" id="features">
+    <div class="features-inner">
+      <p class="section-eyebrow">Features</p>
+      <h2 class="section-title">More than a journal</h2>
+      <p class="features-intro">A minute a day adds up. Here's what keeps people coming back.</p>
+      <div class="features-grid">
+        <div class="feature-card">
+          <img src="images/badges/365_day_streak.webp" width="240" height="240" alt="" loading="lazy" />
+          <h3>Streaks &amp; badges</h3>
+          <p>Post every day to build your streak, and earn badges for milestones along the way.</p>
+        </div>
+        <div class="feature-card">
+          <img src="images/badges/stem_starter.webp" width="240" height="240" alt="" loading="lazy" />
+          <h3>Stem</h3>
+          <p>Not every moment is a peach or a pit. Add a Stem for the weird, funny or in-between parts.</p>
+        </div>
+        <div class="feature-card">
+          <img src="images/badges/shutterbug.webp" width="240" height="240" alt="" loading="lazy" />
+          <h3>Photos</h3>
+          <p>Add a photo to any post so you remember what the day actually looked like.</p>
+        </div>
+        <div class="feature-card">
+          <img src="images/badges/big_moment.webp" width="240" height="240" alt="" loading="lazy" />
+          <h3>Groups</h3>
+          <p>Share with a smaller circle, like family, roommates or your closest friends.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- LOOK BACK -->
+  <section class="lookback">
+    <div class="lookback-inner">
+      <div class="lookback-content">
+        <p class="section-eyebrow">Look back</p>
+        <h2 class="section-title">See your days add up</h2>
+        <p><strong>Monthly Recap</strong> shows your month as a color-coded calendar, with your average rating, how many days you posted and your month in photos.</p>
+        <p><strong>On this day</strong> <span class="tag pit">Premium</span> brings back what you posted one, two and three years ago, all in one place.</p>
+      </div>
+      <div class="lookback-phones">
+        <img src="images/phone-recap.webp" width="600" height="1133" alt="Monthly Recap screen with a color-coded calendar" loading="lazy" />
+        <img src="images/phone-onthisday.webp" width="600" height="1133" alt="On this day screen showing posts from past years" loading="lazy" />
+      </div>
+    </div>
+  </section>
+
+  <!-- PREMIUM -->
+  <section class="premium" id="premium">
+    <div class="premium-inner">
+      <p class="section-eyebrow">Premium</p>
+      <h2 class="section-title">Get even more out of every day</h2>
+      <p class="premium-intro">Peach and Pit is free. Premium unlocks a few extras.</p>
+      <ul class="premium-list">
+        <li><strong>Memories</strong>See what you posted 1, 2 and 3 years ago, all in one place.</li>
+        <li><strong>Deeper insights</strong>Your most-used words, monthly averages and more.</li>
+        <li><strong>Post for any day</strong>Catch up on a day you missed, or a big moment.</li>
+        <li><strong>Custom themes</strong>Pick one of our themes, or design your own.</li>
+        <li><strong>Your own holidays</strong>Mark the days that matter, like your anniversary.</li>
+      </ul>
+      <div class="premium-ways">
+        <div class="premium-way">
+          <div class="big">NEW25</div>
+          <p>New to Peach and Pit? Enter this code when you sign up for a free month of Premium.</p>
+        </div>
+        <div class="premium-way">
+          <div class="big">Invite friends</div>
+          <p>Every friend who signs up with your code gets you a free month, and they get one too. Five friends gets you a full year.</p>
+        </div>
+        <div class="premium-way">
+          <div class="big">$0.99 / mo</div>
+          <p>Or $6.99 a year. Cancel anytime.</p>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -659,6 +935,7 @@
           <div class="review-author">Ellie Mik</div>
         </div>
       </div>
+      <p class="reviews-more"><a href="https://apps.apple.com/us/app/peach-and-pit/id6736346637?see-all=reviews" target="_blank" rel="noopener">Read more reviews on the App Store →</a></p>
     </div>
   </section>
 
@@ -687,21 +964,11 @@
       <p class="section-eyebrow">Get in touch</p>
       <h2 class="section-title">Contact Us</h2>
       <p>Have a question or feedback? We'd love to hear from you.</p>
-      <form class="contact-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
-        <div class="form-group">
-          <label for="name">Name</label>
-          <input type="text" id="name" name="name" placeholder="Your name" />
-        </div>
-        <div class="form-group">
-          <label for="email">Email *</label>
-          <input type="email" id="email" name="email" placeholder="your@email.com" required />
-        </div>
-        <div class="form-group">
-          <label for="message">Message</label>
-          <textarea id="message" name="message" placeholder="What's on your mind?"></textarea>
-        </div>
-        <button type="submit" class="submit-btn">Send Message</button>
-      </form>
+      <a class="email-btn" href="mailto:support@peachandpit.com?subject=Peach%20and%20Pit">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 6l-10 7L2 6"/></svg>
+        Email us
+      </a>
+      <p class="email-address">support@peachandpit.com</p>
     </div>
   </section>
 
